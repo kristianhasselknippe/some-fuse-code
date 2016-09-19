@@ -1,0 +1,25 @@
+<Grid ux:Class="LetsGo.ToggleControl" ColumnCount="2" Width="200" Height="50">
+	<Rectangle ux:Class="LetsGo.ToggleItem" Color="Black">
+		<Stroke Color="ThemeColor" Width="1"/>
+		<string ux:Property="Label" />
+		<Selectable Value="{Property Label}" />
+		<Text ux:Name="text" Value="{Property Label}" Alignment="Center" Color="ThemeColor"/>
+
+		<WhileSelected>
+			<Change this.Color="ThemeColor" Duration="0.2"/>
+			<Change text.Color="White" Duration="0.2"/>
+		</WhileSelected>
+		<Clicked>
+			<ToggleSelection />
+		</Clicked>
+		<Selected>
+			<Scale Target="text" Factor="1.15" Duration="0.15" />
+		</Selected>
+	</Rectangle>
+
+	<string ux:Property="SelectedValue" />
+
+	<Selection MinCount="1" MaxCount="1" Value="{Property SelectedValue}"/>
+	<LetsGo.ToggleItem CornerRadius="25,0,0,25" Label="ONE WAY"/>
+	<LetsGo.ToggleItem CornerRadius="0,25,25,0" Label="ROUND"/>
+</Grid>

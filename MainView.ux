@@ -1,0 +1,19 @@
+<App Background="Black">
+	<!-- comment -->
+	<float4 ux:Global="ThemeColor" ux:Value="#A24AFE" />
+	<Router ux:Name="router"/>
+	<ClientPanel>
+		<JavaScript>
+			module.exports = {
+				pushOtherPage : function() { router.push("otherPage", { name: "THIS IS A USERID" }); },
+				goBack : function() { router.goBack(); }
+			};
+		</JavaScript>
+		<Navigator DefaultTemplate="mainPage" >
+			<LetsGo.MainPage ux:Template="mainPage" router="router" />
+			<LetsGo.OtherPage ux:Template="otherPage" router="router" />
+		</Navigator>
+	</ClientPanel>
+</App>
+
+<!-- fusetools.com/downloads/channel/qa -->

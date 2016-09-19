@@ -1,0 +1,19 @@
+<Panel ux:Class="LetsGo.FromAndToCard">
+	<Text ux:Class="LetsGo.CenterText" Alignment="Center"/>
+	<StackPanel ux:Class="LetsGo.AirportCard" Color="#191919" Padding="20">
+		<string ux:Property="Place" />
+		<string ux:Property="Short" />
+		<string ux:Property="Airport" />
+		<LetsGo.CenterText Value="{Property Place}" Color="#999"/>
+		<LetsGo.CenterText Value="{Property Short}" FontSize="30" Color="White"/>
+		<LetsGo.CenterText Value="{Property Airport}" Color="#aaa"/>
+	</StackPanel>
+
+	<Circle Color="ThemeColor" Width="38" Height="38">
+		<fa_arrow_down Color="White" Alignment="Center" FontSize="22"/>
+	</Circle>
+	<StackPanel ItemSpacing="2">
+		<LetsGo.AirportCard Place="From" Short="DEL - DELHI" Airport="Some international airport"/>
+		<LetsGo.AirportCard Place="To" Short="BLG - BANGALORE" Airport="Some international airport"/>
+	</StackPanel>
+</Panel>

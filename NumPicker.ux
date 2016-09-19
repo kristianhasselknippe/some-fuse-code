@@ -1,0 +1,17 @@
+<Panel ux:Class="LetsGo.NumPicker" MinHeight="30">
+	<Grid Color="#191919" ColumnCount="3">
+		<int ux:Property="Number" />
+		<JavaScript File="NumPicker.js"/> 
+		<Panel Clicked="{decrement}" Padding="10" HitTestMode="LocalBounds">
+			<fa_minus ux:Name="minus" Alignment="Center"/>
+		</Panel>
+		<Text Value="{label}" Color="White" Alignment="Center"/>
+		<Panel Clicked="{increment}" Padding="10" HitTestMode="LocalBounds">
+			<fa_plus Alignment="Center"/>
+		</Panel>
+		<WhileFalse Value="{showMinus}">
+			<Move Target="minus" Y="10" Duration="0.15" Easing="CubicOut" />
+			<Change minus.Opacity="0" Duration="0.15" />
+		</WhileFalse>
+	</Grid>
+</Panel>

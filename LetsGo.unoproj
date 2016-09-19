@@ -1,0 +1,13 @@
+{
+	"RootNamespace":"",
+	"Packages": [
+  		"Fuse",
+  		"FuseJS"
+	],
+	"Projects" : [
+		"fuse-font-awesome/fuse-font-awesome.unoproj"
+	],
+	"Includes": [
+		"*"
+	]
+}

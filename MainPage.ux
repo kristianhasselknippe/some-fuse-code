@@ -1,0 +1,35 @@
+<Page ux:Class="LetsGo.MainPage" Transition="None">
+	<Router ux:Dependency="router" />
+	<DockPanel>
+		<StackPanel>
+			<Grid ux:Class="LetsGo.MenuBar" ColumnCount="3" Height="64">
+				<fa_bars FontSize="30" Color="White" Alignment="CenterLeft" Margin="16,0"/>
+				<Panel Width="150">
+					<Text Value="Flight Tickets" TextAlignment="Center" Color="White"
+						  FontSize="24" Alignment="VerticalCenter"/>
+				</Panel>
+			</Grid>
+
+			<LetsGo.MenuBar />
+
+			<LetsGo.ToggleControl SelectedValue="ONE WAY" Margin="0,20,0,0"/>
+			<LetsGo.FromAndToCard Margin="20" />
+			<LetsGo.TicketCounter />
+
+
+
+		</StackPanel>
+
+		<Rectangle Color="ThemeColor" Height="70" Dock="Bottom" Clicked="{pushOtherPage}">
+			<Text Value="SEARCH FLIGHTS" Color="White" Alignment="Center" FontSize="20"/>
+		</Rectangle>
+	</DockPanel>
+	<EnteringAnimation>
+		<Change this.Color="Blue" Duration="0.5" Easing="BackOut"/>
+		<Move X="1" RelativeTo="Size" Duration="0.5" Easing="BackOut"/>
+	</EnteringAnimation>
+	<ExitingAnimation>
+		<Change this.Color="Blue" Duration="0.5" Easing="BackOut"/>
+		<Move X="-1" RelativeTo="Size" Duration="0.5" Easing="BackOut"/>
+	</ExitingAnimation>
+</Page>

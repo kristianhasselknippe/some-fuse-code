@@ -1,0 +1,56 @@
+<Page ux:Class="LetsGo.OtherPage" Color="Red"
+	  Transition="None">
+	<Router ux:Dependency="router" />
+
+	<JavaScript>
+
+
+		var Observable = require("FuseJS/Observable");
+		var list = Observable(1,2,3,4,5);
+		function addItem(){ list.add("foo"); }
+		function removeItem(arg) { list.remove(arg.data); }
+		module.exports = { list, addItem, removeItem };
+	</JavaScript>
+
+	<StackPanel ItemSpacing="5">
+		<Each Items="{list}">
+			<Rectangle Color="#ff0" Height="50" Clicked="{addItem}">
+				<Text Value="{}" Alignment="Center" FontSize="30"/>
+				<AddingAnimation>
+					<Move X="1" RelativeTo="Size" Duration="0.8" Easing="BackIn" />
+				</AddingAnimation>
+				<RemovingAnimation>
+					<Move X="1" RelativeTo="Size" Duration="0.8" Easing="BackIn" />
+				</RemovingAnimation>
+
+				<LayoutAnimation>
+					<Move Vector="1" Duration="0.8" RelativeTo="PositionChange" Easing="BackIn" />
+				</LayoutAnimation>
+
+				<LongPressed>
+					<Callback Handler="{removeItem}"/>
+				</LongPressed>
+			</Rectangle>
+		</Each>
+	</StackPanel>
+
+	<Rectangle Width="100" Height="100" Color="Red" Clicked="{c1}">
+		<Rectangle ux:Name="r" Color="Green" Width="50" Height="50"
+				   Clicked="{c2}"/>
+	</Rectangle>
+	
+	<WhileCanGoBack NavigationContext="router">
+		<Button Text="Go back" Clicked="{goBack}"/>
+	</WhileCanGoBack>
+
+	<WhileActive>
+		<Change this.Color="Blue" Duration="0.5" Easing="BackOut"/>
+	</WhileActive>
+
+	<EnteringAnimation>
+		<Move X="1" RelativeTo="Size" Duration="0.5" Easing="BackOut"/>
+	</EnteringAnimation>
+	<ExitingAnimation>
+		<Move X="-1" RelativeTo="Size" Duration="0.5" Easing="BackOut"/>
+	</ExitingAnimation>
+</Page>

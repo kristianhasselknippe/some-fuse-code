@@ -1,0 +1,3 @@
+[submodule "fuse-font-awesome"]
+	path = fuse-font-awesome
+	url = git@github.com:kristianhasselknippe/fuse-font-awesome.git

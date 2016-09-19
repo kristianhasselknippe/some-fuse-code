@@ -1,0 +1,8 @@
+<Grid ux:Class="LetsGo.TicketCounter" ColumnCount="3" Rows="1*,2*" Margin="20" CellSpacing="2" Height="80">
+	<Text Value="Adult" />
+	<Text Value="Children" />
+	<Text Value="Infants" />
+	<LetsGo.NumPicker />
+	<LetsGo.NumPicker />
+	<LetsGo.NumPicker />
+</Grid>
